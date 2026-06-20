@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "@stripe/react-stripe-js": "^6.6.0",
@@ -25,10 +26,12 @@
     "vite": "^8.0.16"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.42.1",
     "@types/node": "^26.0.0",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "eslint": "^9.39.1",
-    "typescript-eslint": "^8.61.1"
+    "typescript-eslint": "^8.61.1",
+    "wrangler": "^4.103.0"
   }
 }
